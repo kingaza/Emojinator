@@ -9,7 +9,7 @@ fbag = cv2.createBackgroundSubtractorMOG2()
 
 def create_folder(folder_name):
     if not os.path.exists(folder_name):
-        os.mkdir(folder_name)
+        os.mkdirs(folder_name)
 
 def main(g_id):
     total_pics = 1200

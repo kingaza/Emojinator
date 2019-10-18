@@ -25,7 +25,7 @@ def main():
         ret, thresh = cv2.threshold(opening, 30, 255, cv2.THRESH_BINARY)
 
         thresh = thresh[y:y + h, x:x + w]
-        contours = cv2.findContours(thresh.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)[1]
+        contours = cv2.findContours(thresh.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)[0]
         if len(contours) > 0:
             contour = max(contours, key=cv2.contourArea)
             if cv2.contourArea(contour) > 2500:
